@@ -52,7 +52,7 @@ def main():
             for each_shot in shots:
                 if CircleShape.collides_with(each_shot, each_asteroid)  == True:
                     log_event("asteroid_shot")
-                    each_asteroid.kill()
+                    each_asteroid.split()
                     each_shot.kill()
 
         screen.fill("black")
