@@ -1,0 +1,15 @@
+from constants import *
+from circleshape import *
+
+class Shot(CircleShape):
+    def __init__(self, x, y, radius):
+        self.containers = Shot.containers
+        super().__init__(x, y, radius)
+
+    
+    def draw(self, screen):
+        pygame.draw.circle(screen, "blue", self.position, self.radius, LINE_WIDTH)
+
+
+    def update(self, dt):
+        self.position += self.velocity * dt

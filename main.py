@@ -1,11 +1,12 @@
-import pygame
-from constants import *
-from logger import log_state
-from logger import log_event
-from player import *
-from circleshape import *
 from asteroid import *
 from asteroidfield import *
+from circleshape import *
+from constants import *
+from logger import log_event
+from logger import log_state
+from player import *
+import pygame
+from shot import *
 import sys
 
 
@@ -23,10 +24,12 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
+    shots = pygame.sprite.Group()
 
     Player.containers = (updatable, drawable)
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
+    Shot.containers = (shots, updatable, drawable)
 
     player_x = SCREEN_WIDTH / 2
     player_y = SCREEN_HEIGHT / 2
